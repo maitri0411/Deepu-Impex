@@ -6,7 +6,14 @@
 .center{
   height:600px;
   position:absolute;
-  top:30%;
+  top:20%;
+  left:20%;
+}
+
+.center1{
+  height:200px;
+  position:relative;
+  top:10%;
   left:20%;
 }
 
@@ -38,30 +45,17 @@ div.slide-right a {
     width: 100%;
   }
 }
-.center1{
-  height:100%;
-  position:absolute;
-  top:55%;
-  right:15%;
+.btn:hover{
+  background:#e25b37;
+  color:white;
 }
-div.slide-left {
-  width:100%;
-  overflow:hidden;
-}
-div.slide-left h2 {
-  animation: 2s slide-left;
-}
-@keyframes slide-left {
-  from {
-    margin-right: -100%;
-    width: 100%;
-  }
 
-  to {
-    margin-right: 0%;
-    width: 100%;
-  }
+.hideme
+{
+    opacity:0;
 }
+
+
 img{ max-width:100%;}
 
 .gallery_box li{ width:33.333333%; max-width: 100% ; display:inline-block; float: left; text-align: center; overflow: hidden;    position: relative;}
@@ -547,14 +541,30 @@ body{position:relative}
    height: 20px;
   }
   }
-  .floatr {
+
+  .fade-in {
+  	opacity: 0;
+  }
+  .slide-right {
+  	opacity: 0;
+  	margin-right: 80px;
+  	margin-left: -80px;
+  }
+  .slide-left {
+  	opacity: 0;
+  	margin-right: -80px;
+  	margin-left: 80px;
+  }
+  .rightAlign {
     float: right;
   }
 
-  .floatl {
+  .leftAlign {
     float: left;
   }
-  .animBlock {
+
+  .animateBlock {
+    margin-top: 20px;
     display: inline-block;
     opacity: 0;
     filter: alpha(opacity=0);
@@ -565,44 +575,43 @@ body{position:relative}
     -o-transition: all .55s ease-in;
     transition: all .55s ease-in;
   }
-  .animBlock[data-position="left"] { left: -20%; }
-  .animBlock[data-position="right"] { right: -20%; }
 
-  .animBlock[data-position="left"].viewed {
+  .animateBlock.left {
+    left: -20%;
+  }
+
+  .animateBlock.right {
+    right: -20%;
+  }
+
+  .left.animated {
     left: 0%;
     opacity: 1;
     filter: alpha(opacity=100);
   }
-  .animBlock[data-position="right"].viewed {
+
+  .right.animated {
     right: 0%;
     opacity: 1;
     filter: alpha(opacity=100);
   }
-
-  .animation-element {
-    opacity: 0;
-    position: relative;
-  }
-  /*animation element sliding left*/
-
-  .animation-element.slide-left {
-    opacity: 0;
-    -moz-transition: all 500ms linear;
-    -webkit-transition: all 500ms linear;
-    -o-transition: all 500ms linear;
-    transition: all 500ms linear;
-    -moz-transform: translate3d(-100px, 0px, 0px);
-    -webkit-transform: translate3d(-100px, 0px, 0px);
-    -o-transform: translate(-100px, 0px);
-    -ms-transform: translate(-100px, 0px);
-    transform: translate3d(-100px, 0px, 0px);
+  .clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
   }
 
-  .animation-element.slide-left.in-view {
-    opacity: 1;
-    -moz-transform: translate3d(0px, 0px, 0px);
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    -o-transform: translate(0px, 0px);
-    -ms-transform: translate(0px, 0px);
-    transform: translate3d(0px, 0px, 0px);
+  .clearfix {
+    display: inline-block;
+  }
+
+  html[xmlns] .clearfix {
+    display: block;
+  }
+
+  * html .clearfix {
+    height: 1%;
   }
