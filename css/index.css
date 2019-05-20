@@ -96,6 +96,17 @@ body{position:relative}
   color:red;
 }
 
+@media(min-width:767px){
+  #import1{
+    display:none;
+  }
+}
+@media(max-width:767px){
+  #import{
+    display:none;
+  }
+}
+
 .flex-grid {
   display:flex;
   flex-wrap: wrap;
@@ -608,7 +619,7 @@ body{position:relative}
     display: inline-block;
   }
 
-  html[xmlns] .clearfix {
+  html[xmlns] .clearfix p{
     display: block;
   }
 
