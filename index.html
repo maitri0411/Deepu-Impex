@@ -26,13 +26,78 @@
 <script>
               new WOW().init();
 </script>
+<style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: white;
+  color: black;
+}
+
+.modal-body {padding: 2px 16px;}
+
+</style>
+</head>
 <body>
   <div id="header" style="background:#3caae6;height:50px;">
     <div class="container">
       <div class="row">
       <div class="col-sm-6 col-md-6" style="padding-top:15px;">
-        <a href="#" style="text-decoration:none;color:white;font-family:'Basic';">Email: info@company_name.com</a>
+        <a href="#" style="text-decoration:none;color:white;font-family:'Basic';">Email: info@deepuimpex.com</a>
       </div>
       <div class="col-sm-6 col-md-6" style="padding-top:18px;">
         <i class="fa fa-envelope" style="color:white;float:right;font-size:18px;margin-right:10px;"></i>
@@ -48,16 +113,41 @@
     <div class="container" style="height:150px;">
       <div class="row">
       <div class="col-sm-6">
-        <img src="images/Logo.png" width="40%" height="60%">
+        <img src="images/Logo.png" width="150px" height="150px">
         <h2 style="font-family:'Righteous';display:inline;margin-bottom:-30px;">Deepu Impex</h2>
       </div>
       <div class="col-sm-6">
-        <a href="#" style="text-decoration:none;color:white;background:#0089d5;padding:10px;border-radius:20px;margin-top:40px;float:right;font-family:'Basic';">Request Quotation</a>
-        <a href="#" style="text-decoration:none;color:white;background:#0089d5;padding:10px;border-radius:20px;margin-top:40px;float:right;margin-right:8px;font-family:'Basic';">Contact Us</a>
+        <a href="#" id="myBtn" style="text-decoration:none;color:white;background:#0089d5;padding:10px;border-radius:20px;margin-top:40px;float:right;font-family:'Basic';">Request Quotation</a>
+        <a href="contact.html" style="text-decoration:none;color:white;background:#0089d5;padding:10px;border-radius:20px;margin-top:40px;float:right;margin-right:8px;font-family:'Basic';">Contact Us</a>
       </div>
     </div>
   </div>
-    <nav class="navbar navbar-expand-md navbar-dark sidebarNavigation fixed" data-sidebarClass="navbar-dark bg-dark" style="height:80px;background:#e25b37;">
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <center><h3>Get A Quote</h3></center>
+        <center><form><br>
+          <input type="text" id="Fname" placeholder="First Name *" style="padding:10px;border:1px solid black;">
+          <input type="text" id="Lname" placeholder="Last Name *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
+          <input type="number" id="Phone" placeholder="Phone No *" style="padding:10px;border:1px solid black;">
+          <input type="email" id="Email" placeholder="Email Id *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
+          <input type="text" id="Cname" placeholder="Company Name *" style="padding:10px;border:1px solid black;">
+          <input type="text" id="Prod" placeholder="Product Name *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
+          <input type="number" id="Quant" placeholder="Quantity *" style="padding:10px;border:1px solid black;">
+          <input type="text" id="Pay" placeholder="Payment Terms *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
+          <textarea type="text" id="specs" placeholder="Other Requirements" style="width:480px;padding:10px;border:1px solid black;"></textarea><br><br>
+          <input type="submit" id="btn_submit" value="Submit" style="width:200px;padding:10px;border:2px solid #0089d5;color:#0089d5;background:white;"><br><br>
+        </form></center>
+      </div>
+    </div>
+
+  </div>
+    <nav class="navbar navbar-expand-md navbar-dark sidebarNavigation fixed" data-sidebarClass="navbar-dark bg-dark" style="height:50px;background:#e25b37;z-index:0;">
         <div class="container-fluid">
         <button style="background: black;" class="navbar-toggler leftNavbarToggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,13 +165,8 @@
                     <a class="nav-link" href="About.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Lobster';">About</a>
                 </li>
 
-                <li class="nav-item dropdown" style="margin-right:170px;">
-                    <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false" style="color:black;width:150px;text-align:center;font-size:24px;font-family:'Lobster';">Products</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="import.html">Import Products</a>
-                        <a class="dropdown-item" href="export.html">Export Products</a>
-                    </div>
+                <li class="nav-item" style="margin-right:170px;">
+                    <a class="nav-link" href="products.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Lobster';">Products</a>
                 </li>
 
                 <li class="nav-item" style="margin-right:170px;">
@@ -110,35 +195,32 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-      <div class="item active" style="height:600px;">
-        <img src="images/bg1.jpg" height="100%" width="100%">
+      <div class="item active">
+        <img src="images/banner1.jpg" height="100%" width="100%">
     <div class="center slide-right">
-        <h4 style="color:white;">Brokemann & Co</h4>
-        <h1 style="color:white;font-size:44px;width:600px;"><b>Visit Our Shop</b></h1>
-    <h3 style="color:white;">Our customers satisfaction is our utmost priority</h3><br><br><br>
-    <a href="#" style="padding:20px;text-decoration:none;border:2px solid white;color:white;">VISIT OUR SHOP</a><br>
+        <h1 style="color:white;font-size:44px;"><b>You Support, We Import</b></h1>
       </div>
       </div>
 
-      <div class="item" style="height:600px;">
-        <img src="images/bg2.jpg" height="100%" width="100%">
+      <div class="item">
+        <img src="images/banner2.jpg" height="100%" width="100%">
     <div class="center slide-right">
-        <h4 style="color:white;">Brokemann & Co</h4>
-        <h1 style="color:white;font-size:44px;width:600px;"><b>Visit Our Shop</b></h1>
-    <h3 style="color:white;">Our customers satisfaction is our utmost priority</h3><br><br><br>
-    <a href="#" style="padding:20px;text-decoration:none;border:2px solid white;color:white;">VISIT OUR SHOP</a><br>
+        <h1 style="color:white;font-size:44px;"><b>Secure Supplies From Across The Globe</b></h1>
       </div>
       </div>
 
-      <!--<div class="item" style="height:600px;">
-        <img src="background1.jpg" height="600px" width="100%">
+      <div class="item">
+        <img src="images/banner3.jpg" height="100%" width="100%">
     <div class="center slide-right">
-        <h4 style="color:white;">Brokemann & Co</h4>
-        <h1 style="color:white;font-size:44px;width:600px;"><b>Visit Our Shop</b></h1>
-    <h3 style="color:white;">Our customers satisfaction is our utmost priority</h3><br><br><br>
-    <a href="#" style="padding:20px;text-decoration:none;border:2px solid white;color:white;">VISIT OUR SHOP</a><br>
+        <h1 style="color:white;font-size:44px;"><b>Simplifying Worldwide Shipping</b></h1>
       </div>
-    </div>-->
+    </div>
+    <div class="item">
+      <img src="images/bg1.jpg" height="100%" width="100%">
+  <div class="center slide-right">
+      <h1 style="color:white;font-size:44px;"><b>Making Your Worwide Trading Easy</b></h1>
+    </div>
+  </div>
     </div>
 
     <!-- Left and right controls -->
@@ -165,7 +247,7 @@
 
 <div id="sec3" style="background:#0089d5;"><br>
   <center><h2 class="hideme" style="color:#0089d5;background: white;padding:10px;width:250px;position:relative;top:44px;font-family: 'Lobster', cursive;">Deepu Impex</h2></center><hr style="border:1px dashed white;"><br>
-  <center><h4 class="hideme" style="width:80%;color:white;font-family:'Basic';">Since its inception in 1983 as a small weaving company, Orbit Exports has advanced considerably to become one of India's largest exporters of novelty fabrics. Orbit's global reach is testament to its success, with the company having established prolific operations in the USA, Latin America, Africa, Europe and the Far East.</h4></center><br><br><br>
+  <center><h4 class="hideme" style="width:80%;color:white;font-family:'Basic';">Since its inception in 1983 as a small company, Deepu Impex has advanced considerably to become one of India's largest exporters. Orbit's global reach is testament to its success, with the company having established prolific operations World wide.</h4></center><br><br><br>
 </div><br><br>
   <!--<div id="sec4">
     <ul class="gallery_box" style="max-width:100%;">
@@ -288,19 +370,19 @@
     </div>
 
 </section>-->
-<div class="flex-grid featured-content wow slideInLeft" style="max-width:100%;height:auto;">
-  <center><h2  style="color:white;background:#e25b37;width:300px;padding:10px;font-family: 'Lobster', cursive;">Products We Import</h2><hr style="border:1px dashed #e25b37;width:800px;margin-top:-40px;"></center>
-  <div class="row" style="height:60vh;padding-top:60px;">
+<div class="flex-grid featured-content" style="max-width:100%;height:auto;">
+  <center><h2  style="color:white;background:#e25b37;width:400px;padding:10px;font-family: 'Lobster', cursive;">Products We Import & Export</h2><hr style="border:1px dashed #e25b37;width:800px;margin-top:-40px;"></center>
+  <div class="row" style="padding-top:60px;">
   <div class="col-sm-6">
       <div class="grid-item wow slideInLeft">
   		 <div class="grid-item-wrapper">
-  			  <div class="grid-item-bg-img notAnimated animateBlock leftAlign left" style="background-image:url('images/import2.jpg')"></div>
+  			  <div class="grid-item-bg-img notAnimated animateBlock leftAlign left" style="background-image:url('images/aluminium.jpg')"></div>
   			  <div class="grid-item-content">
   					<div class="grid-item-content-details">
-  						 <h4 class="grid-title">Import 1</h4>
-  						 <div class="grid-details">Graphic design is the process of visual communication and problem-solving using one or more of typography, photography and illustration to create visual compositions.</div>
+  						 <h4 class="grid-title">Aluminium Scrap</h4><br>
+  						 <div class="grid-details">Aluminium scrap remains a significant resource to be used as raw material to produce secondary aluminum and subsequently new aluminum products.</div>
   					<div class="grid-action">
-  						 <div class="btn btn--clear">Read More</div>
+  						 <a href="products.html"><div class="btn btn--clear">Read More</div></a>
   					</div>
   			  </div>
   		 </div>
@@ -309,13 +391,13 @@
     <div class="col-sm-3">
       <div class="grid-item wow slideInLeft">
   		 <div class="grid-item-wrapper">
-  			  <div class="grid-item-bg-img" style="background-image:url('images/import1.jpg')"></div>
+  			  <div class="grid-item-bg-img" style="background-image:url('images/groundnut.jpg')"></div>
   			  <div class="grid-item-content">
   					<div class="grid-item-content-details">
-  						 <h4 class="grid-title">Import 2</h4>
-  						 <div class="grid-details">Graphic design is the process of visual communication and problem-solving using one or more of typography, photography and illustration to create visual compositions.</div>
+  						 <h4 class="grid-title">Groundnut</h4><br>
+  						 <div class="grid-details">Peanuts grow best in light, sandy loam soil. They require five months of warm weather.Peanuts are also widely used in South-East Asian cuisine, particularly Indonesia.</div>
   					<div class="grid-action">
-  						 <div class="btn btn--clear">Read More</div>
+  						 <a href="products.html"><div class="btn btn--clear">Read More</div></a>
   					</div>
   			  </div>
   		 </div>
@@ -324,22 +406,70 @@
 <div class="col-sm-3">
       <div class="grid-item  wow slideInLeft">
   		 <div class="grid-item-wrapper">
-  			 <div class="grid-item-bg-img" style="background-image:url('images/import3.jpg')"></div>
+  			 <div class="grid-item-bg-img" style="background-image:url('images/copper.jpg')"></div>
   			  <div class="grid-item-content">
   					<div class="grid-item-content-details">
-  						 <h4 class="grid-title">Import 3</h4>
-  						   <div class="grid-details">Graphic llustration to create visual compositions.</div>
+  						 <h4 class="grid-title">Copper Scrap</h4><br>
+  						   <div class="grid-details">We are offering finest quality Copper Scraps, which are recycled for producing pure copper products and equipments. We are procuring these scraps in bulk quantities to meet the large demand of clients.</div>
 
   					<div class="grid-action">
-  						 <div class="btn btn--clear">Read More</div>
+  						 <a href="products.html"><div class="btn btn--clear">Read More</div></a>
   					</div>
   			  </div>
   		 </div>
       </div>
     </div></div>
+    <div class="col-sm-4" style="padding-top:30px;">
+          <div class="grid-item  wow slideInRight">
+      		 <div class="grid-item-wrapper">
+      			 <div class="grid-item-bg-img" style="background-image:url('images/mango.jpg')"></div>
+      			  <div class="grid-item-content">
+      					<div class="grid-item-content-details">
+      						 <h4 class="grid-title">Mango</h4><br>
+      						   <div class="grid-details">We are one of the enlisted names, trading & exporting a quality tested range of Mangoes. It is a seasonal fruit which is reckoned amongst the clients for its sweet taste. </div>
+
+      					<div class="grid-action">
+      						 <a href="products.html"><div class="btn btn--clear">Read More</div></a>
+      					</div>
+      			  </div>
+      		 </div>
+          </div>
+        </div></div>
+        <div class="col-sm-4" style="padding-top:30px;">
+              <div class="grid-item  wow slideInRight">
+          		 <div class="grid-item-wrapper">
+          			 <div class="grid-item-bg-img" style="background-image:url('images/brass.jpg')"></div>
+          			  <div class="grid-item-content">
+          					<div class="grid-item-content-details">
+          						 <h4 class="grid-title">Brass Scrap</h4><br>
+          						   <div class="grid-details">The excellent assortment of precision Brass Scraps that we offer is processed in accordance with the internationally approved quality benchmarks.</div>
+
+          					<div class="grid-action">
+          						 <a href="products.html"><div class="btn btn--clear">Read More</div></a>
+          					</div>
+          			  </div>
+          		 </div>
+              </div>
+            </div></div>
+            <div class="col-sm-4" style="padding-top:30px;">
+                  <div class="grid-item  wow slideInRight">
+              		 <div class="grid-item-wrapper">
+              			 <div class="grid-item-bg-img" style="background-image:url('images/stainless_steel.jpg')"></div>
+              			  <div class="grid-item-content">
+              					<div class="grid-item-content-details">
+              						 <h4 class="grid-title">Stainless Steel Scrap</h4><br>
+              						   <div class="grid-details">Leveraging the skills of our qualified team of professionals, we are engaged in providing Stainless Steel Recycle Scrap.</div>
+
+              					<div class="grid-action">
+              						 <a href="products.html"><div class="btn btn--clear">Read More</div></a>
+              					</div>
+              			  </div>
+              		 </div>
+                  </div>
+                </div></div>
   </div>
 </div><br>
-<div class="flex-grid featured-content wow slideInRight">
+<!--<div class="flex-grid featured-content wow slideInRight">
   <center><h2 class="hideme" style="color:white;background:#e25b37;width:300px;padding:10px;font-family: 'Lobster', cursive;">Products We Export</h2><hr style="border:1px dashed #e25b37;width:800px;margin-top:-40px;"></center>
   <div class="row flex-row" style="height:500px;padding-top:30px;">
     <div class="col-sm-4" style="padding-top:25px;">
@@ -389,7 +519,7 @@
   			  </div>
   		 </div>
      </div></div></div>
-</div>
+</div>-->
 <!--<div class="container">
 	<div class="row">
         <div class="col-sm-8">
@@ -517,13 +647,13 @@
         <center><p style="color:white;font-size:18px;">Insights</p>
         <a href="index.html" style="text-decoration:none;"><p style="color:white;">Home</p></a>
         <a href="About.html" style="text-decoration:none;"><p style="color:white;">About</p></a>
-        <a href="#" style="text-decoration:none;"><p style="color:white;">Products</p></a>
+        <a href="products.html" style="text-decoration:none;"><p style="color:white;">Products</p></a>
         <a href="contact.html" style="text-decoration:none;"><p style="color:white;">Contact</p></center></a>
       </div>
       <div class="col-sm-4" style="padding-left:50px;">
-        <p style="color:white;">ADDRESS:</p>
-        <p style="color:white;">CONTACT NO:</p>
-        <p style="color:white;">EMAIL-ID:</p>
+        <p style="color:white;">ADDRESS:<br>14, Keshav Bungalows,<br>Nr. S.P. ring road,<br>Nanachiloda, Gandhinagar,<br>Gujarat, India</p>
+        <p style="color:white;">CONTACT NO:<br> +91 9924095244</p>
+        <p style="color:white;">EMAIL-ID:<br>info@deepuimpex.com</p>
       </div>
     </div></div><br>
     <div class="container">
@@ -560,6 +690,33 @@ AOS.init({
 });
 </script>
 <script scr="aos.js"></script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>
