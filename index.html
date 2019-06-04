@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"
   <script src="https://code.jquery.com/jquery-1.12.0.js"></script>
-  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="js/scrollview.js"></script>
   <link rel="stylesheet" href="css/style.css">
 <link rel="shortcut icon" sizes="114x114" href="images\Logo.png" type="image/x-icon">
 <link rel="stylesheet" href="css/index.css">
@@ -27,6 +25,11 @@
               new WOW().init();
 </script>
 <style>
+@media(max-width:767px){
+  .modal{
+    margin-left:-200px;
+  }
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -34,9 +37,6 @@
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -45,10 +45,8 @@
 .modal-content {
   position: relative;
   background-color: #fefefe;
-  margin: auto;
-  padding: 0;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -93,61 +91,59 @@
 </style>
 </head>
 <body>
-  <div id="header" style="background:#3caae6;height:50px;">
+  <div id="header" style="background:#eba607;max-width:100%;height:auto;">
     <div class="container">
       <div class="row">
-      <div class="col-sm-6 col-md-6" style="padding-top:15px;">
-        <a href="#" style="text-decoration:none;color:white;font-family:'Basic';">Email: info@deepuimpex.com</a>
+      <div class="col-sm-6 col-md-6" style="padding-top:12px;">
+        <p style="text-decoration:none;color:white;font-family:'Basic';font-size:18px;">Email: <a href="mailto:info@deepuimpex.com?subject=Enquiry" style="color:white;text-decoration:none;">info@deepuimpex.com</a></p>
       </div>
-      <div class="col-sm-6 col-md-6" style="padding-top:18px;">
-        <i class="fa fa-envelope" style="color:white;float:right;font-size:18px;margin-right:10px;"></i>
-        <i class="fa fa-facebook" style="color:white;float:right;margin-right:10px;font-size:18px;"></i>
-        <i class="fa fa-instagram" style="color:white;float:right;margin-right:10px;font-size:18px;"></i>
-        <i class="fa fa-twitter" style="color:white;float:right;margin-right:10px;font-size:18px;"></i>
+      <div class="col-sm-6 col-md-6" style="padding-top:12px;">
+        <p style="color:white;float:right;margin-right:10px;font-size:18px;font-family:'Basic';">Contact No:<a href="tel:9924095244" style="color:white;text-decoration:none;"> +91 9924095244</a></p>
       </div>
     </div>
 
-  </div><br>
   </div>
-  <div id="sec1">
-    <div class="container" style="height:150px;">
+  </div>
+  <center><div id="myModal" class="modal" style="max-width:100%;height:auto;">
+
+     <!-- Modal content -->
+     <div class="modal-content" style="max-width:100%;height:auto;">
+       <div class="modal-header">
+         <span class="close">&times;</span>
+       </div>
+       <div class="modal-body">
+         <center><h3>Get A Quote</h3></center>
+         <center><form action="mailto:info@deepuimex.com?subject=Request-For-Quotation" method="post" enctype="text/plain"><br>
+           <input type="text" name="First Name" id="Fname" placeholder="First Name *" style="padding:10px;border:1px solid black;width:40%;">
+           <input type="text" name="Last Name" id="Lname" placeholder="Last Name *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+           <input type="number" name="Phone no" id="Phone" placeholder="Phone No *" style="padding:10px;border:1px solid black;width:40%;">
+           <input type="email" name="Email" id="Email" placeholder="Email Id *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+           <input type="text" name="Company Name" id="Cname" placeholder="Company Name *" style="padding:10px;border:1px solid black;width:40%;">
+           <input type="text" name="Product Name" id="Prod" placeholder="Product Name *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+           <input type="number" name="Quantity" id="Quant" placeholder="Quantity *" style="padding:10px;border:1px solid black;width:40%;">
+           <input type="text" id="Pay" name="Payment Terms" placeholder="Payment Terms *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+           <textarea type="text" name="Other Requirements" id="specs" placeholder="Other Requirements" style="width:480px;padding:10px;border:1px solid black;width:84%;"></textarea><br><br>
+           <input type="submit" id="btn_submit" value="Submit" style="width:200px;padding:10px;border:2px solid #0089d5;color:#0089d5;background:white;"><br><br>
+         </form></center>
+       </div>
+     </div>
+
+   </div></center>
+  <div id="sec1" style="max-width:100%;height:auto;">
+    <div class="container"><br>
       <div class="row">
       <div class="col-sm-6">
-        <img src="images/Logo.png" width="150px" height="150px">
-        <h2 style="font-family:'Righteous';display:inline;margin-bottom:-30px;">Deepu Impex</h2>
+        <a href="index.html"><img src="images/Logo.png" width="200px" height="120px"></a>
+        <!--<h2 style="font-family:'Righteous';display:inline;margin-bottom:-30px;">Deepu Impex</h2>-->
       </div>
       <div class="col-sm-6">
-        <a href="#" id="myBtn" style="text-decoration:none;color:white;background:#0089d5;padding:10px;border-radius:20px;margin-top:40px;float:right;font-family:'Basic';">Request Quotation</a>
-        <a href="contact.html" style="text-decoration:none;color:white;background:#0089d5;padding:10px;border-radius:20px;margin-top:40px;float:right;margin-right:8px;font-family:'Basic';">Contact Us</a>
+        <a href="#" id="myBtn" style="text-decoration:none;color:white;background:#c71f16;padding:10px;border-radius:20px;margin-top:40px;float:right;font-family:'Basic';">Request Quotation</a>
+        <a href="contact.html" style="text-decoration:none;color:white;background:#c71f16;padding:10px;border-radius:20px;margin-top:40px;float:right;margin-right:8px;font-family:'Basic';">Contact Us</a>
       </div>
     </div>
   </div>
-  <div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-      </div>
-      <div class="modal-body">
-        <center><h3>Get A Quote</h3></center>
-        <center><form><br>
-          <input type="text" id="Fname" placeholder="First Name *" style="padding:10px;border:1px solid black;">
-          <input type="text" id="Lname" placeholder="Last Name *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
-          <input type="number" id="Phone" placeholder="Phone No *" style="padding:10px;border:1px solid black;">
-          <input type="email" id="Email" placeholder="Email Id *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
-          <input type="text" id="Cname" placeholder="Company Name *" style="padding:10px;border:1px solid black;">
-          <input type="text" id="Prod" placeholder="Product Name *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
-          <input type="number" id="Quant" placeholder="Quantity *" style="padding:10px;border:1px solid black;">
-          <input type="text" id="Pay" placeholder="Payment Terms *" style="margin-left:30px;padding:10px;border:1px solid black;"><br><br>
-          <textarea type="text" id="specs" placeholder="Other Requirements" style="width:480px;padding:10px;border:1px solid black;"></textarea><br><br>
-          <input type="submit" id="btn_submit" value="Submit" style="width:200px;padding:10px;border:2px solid #0089d5;color:#0089d5;background:white;"><br><br>
-        </form></center>
-      </div>
-    </div>
-
-  </div>
-    <nav class="navbar navbar-expand-md navbar-dark sidebarNavigation fixed" data-sidebarClass="navbar-dark bg-dark" style="height:50px;background:#e25b37;z-index:0;">
+    <nav class="navbar navbar-expand-md navbar-dark sidebarNavigation fixed" data-sidebarClass="navbar-default bg-light" style="height:50px;background:#eba607;z-index:0;">
         <div class="container-fluid">
         <button style="background: black;" class="navbar-toggler leftNavbarToggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -196,29 +192,29 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="images/banner1.jpg" height="100%" width="100%">
+        <img src="images/logo.jpg" height="70%" width="100%">
     <div class="center slide-right">
-        <h1 style="color:white;font-size:44px;"><b>You Support, We Import</b></h1>
+        <h1 style="color:white;"><b>You Support, We Import</b></h1>
       </div>
       </div>
 
       <div class="item">
         <img src="images/banner2.jpg" height="100%" width="100%">
     <div class="center slide-right">
-        <h1 style="color:white;font-size:44px;"><b>Secure Supplies From Across The Globe</b></h1>
+        <h1 style="color:white;"><b>Secure Supplies From Across The Globe</b></h1>
       </div>
       </div>
 
       <div class="item">
         <img src="images/banner3.jpg" height="100%" width="100%">
     <div class="center slide-right">
-        <h1 style="color:white;font-size:44px;"><b>Simplifying Worldwide Shipping</b></h1>
+        <h1 style="color:white;"><b>Simplifying Worldwide Shipping</b></h1>
       </div>
     </div>
     <div class="item">
-      <img src="images/bg1.jpg" height="100%" width="100%">
+      <img src="images/bg2.jpg" height="100%" width="100%">
   <div class="center slide-right">
-      <h1 style="color:white;font-size:44px;"><b>Making Your Worwide Trading Easy</b></h1>
+      <h1 style="color:white;"><b>Making Your Worwide Trading Easy</b></h1>
     </div>
   </div>
     </div>
@@ -245,9 +241,9 @@
   </div>
 </div>-->
 
-<div id="sec3" style="background:#0089d5;"><br>
-  <center><h2 class="hideme" style="color:#0089d5;background: white;padding:10px;width:250px;position:relative;top:44px;font-family: 'Lobster', cursive;">Deepu Impex</h2></center><hr style="border:1px dashed white;"><br>
-  <center><h4 class="hideme" style="width:80%;color:white;font-family:'Basic';">Since its inception in 1983 as a small company, Deepu Impex has advanced considerably to become one of India's largest exporters. Orbit's global reach is testament to its success, with the company having established prolific operations World wide.</h4></center><br><br><br>
+<div id="sec3" style="background:#eba607;"><br>
+  <center><h2 class="wow fadeInUp" style="color:#eba607;background: white;padding:10px;width:250px;position:relative;top:44px;font-family: 'Lobster', cursive;">Deepu Impex</h2></center><hr style="border:1px dashed white;"><br>
+  <center><h4 class="wow fadeInUp" style="width:80%;color:white;font-family:'Basic';">Since its inception in 1983 as a small company, Deepu Impex has advanced considerably to become one of India's largest exporters. Orbit's global reach is testament to its success, with the company having established prolific operations World wide.</h4></center><br><br><br>
 </div><br><br>
   <!--<div id="sec4">
     <ul class="gallery_box" style="max-width:100%;">
@@ -371,12 +367,12 @@
 
 </section>-->
 <div class="flex-grid featured-content" style="max-width:100%;height:auto;">
-  <center><h2  style="color:white;background:#e25b37;width:400px;padding:10px;font-family: 'Lobster', cursive;">Products We Import & Export</h2><hr style="border:1px dashed #e25b37;width:800px;margin-top:-40px;"></center>
-  <div class="row" style="padding-top:60px;">
-  <div class="col-sm-6">
+  <center><h2  style="color:white;background:#c71f16;width:400px;padding:10px;font-family: 'Lobster', cursive;">Products We Import & Export</h2><hr style="border:1px dashed #c71f16;width:800px;margin-top:-40px;"></center>
+  <div class="row">
+  <div class="col-sm-6" style="padding-top:30px;">
       <div class="grid-item wow slideInLeft">
   		 <div class="grid-item-wrapper">
-  			  <div class="grid-item-bg-img notAnimated animateBlock leftAlign left" style="background-image:url('images/aluminium.jpg')"></div>
+  			  <div class="grid-item-bg-img" style="background-image:url('images/aluminium.jpg')"></div>
   			  <div class="grid-item-content">
   					<div class="grid-item-content-details">
   						 <h4 class="grid-title">Aluminium Scrap</h4><br>
@@ -388,7 +384,7 @@
   		 </div>
       </div>
     </div></div>
-    <div class="col-sm-3">
+    <div class="col-sm-3" style="padding-top:30px;">
       <div class="grid-item wow slideInLeft">
   		 <div class="grid-item-wrapper">
   			  <div class="grid-item-bg-img" style="background-image:url('images/groundnut.jpg')"></div>
@@ -403,7 +399,7 @@
   		 </div>
       </div>
     </div></div>
-<div class="col-sm-3">
+<div class="col-sm-3" style="padding-top:30px;">
       <div class="grid-item  wow slideInLeft">
   		 <div class="grid-item-wrapper">
   			 <div class="grid-item-bg-img" style="background-image:url('images/copper.jpg')"></div>
@@ -562,14 +558,14 @@
   <div class="container">
 <div class="row">
   <div class="col-sm-4 wow bounceInUp"><br><br>
-    <center><h2 style="color:white;width:200px;background:#0089d5;padding:10px;font-family: 'Lobster', cursive;">Mission</h2><hr style="border:1px dashed #0089d5;margin-top:-40px;width:350px;"></center><br>
+    <center><h2 style="color:white;width:200px;background:#eba607;padding:10px;font-family: 'Lobster', cursive;">Mission</h2><hr style="border:1px dashed #eba607;margin-top:-40px;width:350px;"></center><br>
     <center><h4>Our Mission is to build successful associations with Enterprise customers & Co-Create Success through solid partnership with world-class suppliers of Pharma products.</h4></center>
   </div>
-  <div class="col-sm-4 hideme">
+  <div class="col-sm-4 wow bounceInDown">
     <img src="images/World.png" height="100%" width="100%">
 </div>
   <div class="col-sm-4 wow bounceInUp"><br><br>
-    <center><h2 style="color:white;width:200px;background:#0089d5;padding:10px;font-family: 'Lobster', cursive;">Vision</h2><hr style="border:1px dashed #0089d5;margin-top:-40px;width:350px;"></center><br>
+    <center><h2 style="color:white;width:200px;background:#eba607;padding:10px;font-family: 'Lobster', cursive;">Vision</h2><hr style="border:1px dashed #eba607;margin-top:-40px;width:350px;"></center><br>
     <center><h4>We aspire to be a professional organisation catering to global markets; our team believes in nurturing relationships and creating value for all stake-holders.</h4></center>
   </div>
 </div>
@@ -577,41 +573,41 @@
 </div>
 
 <div id="sec5">
-  <center><h2 class="wow fadeInDown" style="color:white;background:#e25b37;width:300px;padding:10px;font-family:'Lobster',cursive;">What our Clients say!</h2><hr style="border:1px dashed #e25b37;margin-top:-40px;width:800px;"></center><br>
+  <center><h2 class="wow fadeInDown" style="color:white;background:#c71f16;width:300px;padding:10px;font-family:'Lobster',cursive;">What our Clients say!</h2><hr style="border:1px dashed #e25b37;margin-top:-40px;width:800px;"></center><br>
   <div class="row">
 <div class="col-md-offset-2 col-md-8">
 <div class="carousel slide" data-ride="carousel" id="quote-carousel" style="background:white;padding-top:50px;">
-<ol class="carousel-indicators">
+<!--<ol class="carousel-indicators">
   <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
   <li data-target="#quote-carousel" data-slide-to="1"></li>
   <li data-target="#quote-carousel" data-slide-to="2"></li>
   <li data-target="#quote-carousel" data-slide-to="3"></li>
-</ol>
+</ol>-->
 <div class="carousel-inner">
   <div class="item active hideme">
     <blockquote>
 
-          <center><p style="font-size:30px;color:black;">Stay hungry, stay foolish.</p></center><br><center><hr style="border:3px solid #e25b37;width:10%;"></center>
+          <center><p style="font-size:30px;color:black;">Stay hungry, stay foolish.</p></center><br><center><hr style="border:3px solid #c71f16;width:10%;"></center>
           <center><h4 style="color:black;">Steve Jobs</h4></center>
     </blockquote>
   </div>
   <div class="item">
     <blockquote>
 
-          <center><p style="font-size:30px;color:black;">If you can dream it, you can do it.</p></center><br><center><hr style="border:3px solid #e25b37;width:10%;"></center>
+          <center><p style="font-size:30px;color:black;">If you can dream it, you can do it.</p></center><br><center><hr style="border:3px solid #c71f16;width:10%;"></center>
           <center><h4 style="color:black;">Walt Disney</h4></center>
     </blockquote>
   </div>
   <div class="item">
     <blockquote>
 
-          <center><p style="font-size:30px;color:black;">Start where you are. Do what you can.</p></center><br><center><hr style="border:3px solid #e25b37;width:10%;"></center>
+          <center><p style="font-size:30px;color:black;">Start where you are. Do what you can.</p></center><br><center><hr style="border:3px solid #c71f16;width:10%;"></center>
           <center><h4 style="color:black;">Arthur Ashe</h4></center>
     </blockquote>
   </div>
   <div class="item">
     <blockquote>
-          <center><p style="font-size:30px;color:black;">Running without competitor is waste of time..</p></center><br><center><hr style="border:3px solid #e25b37;width:10%;"></center>
+          <center><p style="font-size:30px;color:black;">Running without competitor is waste of time..</p></center><br><center><hr style="border:3px solid #c71f16;width:10%;"></center>
           <center><h4 style="color:black;">Arunkumar Maha</h4></center>
     </blockquote>
   </div>
@@ -623,10 +619,10 @@
 
 <div id="sec6">
     <div class="row">
-      <div class="col-sm-6 hideme">
+      <div class="col-sm-6 wow fadeInLeft">
         <img src="images/support.png" height="100%" width="90%">
       </div>
-      <div class="col-sm-6 hideme" style="background:#0089d5;">
+      <div class="col-sm-6 wow fadeInRight" style="background:#eba607;">
         <center><h2 style="color:white;font-family:'Lobster', cursive;">We're here to support you!</h2><hr style="border:1px dashed white;margin-top:-2px;width:500px;"></center>
       </div>
     </div>
@@ -636,8 +632,8 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        <center><img src="images/Logo.png" width="50%" height="50%">
-        <center><h3 style="color:white;font-family:'Righteous';">Deepu Impex</h3></center><br>
+        <center><a href="index.html"><img src="images/Logo.png" width="50%" height="50%"></a></center><br><br><br>
+        <!--<center><h3 style="color:white;font-family:'Righteous';">Deepu Impex</h3></center><br>-->
         <center><i class="fa fa-facebook" style="color:white;margin-right:30px;font-size:20px;"></i>
         <i class="fa fa-instagram" style="color:white;margin-right:30px;font-size:20px;"></i>
         <i class="fa fa-twitter" style="color:white;margin-right:30px;font-size:20px;"></i>
@@ -652,8 +648,8 @@
       </div>
       <div class="col-sm-4" style="padding-left:50px;">
         <p style="color:white;">ADDRESS:<br>14, Keshav Bungalows,<br>Nr. S.P. ring road,<br>Nanachiloda, Gandhinagar,<br>Gujarat, India</p>
-        <p style="color:white;">CONTACT NO:<br> +91 9924095244</p>
-        <p style="color:white;">EMAIL-ID:<br>info@deepuimpex.com</p>
+        <p style="color:white;">CONTACT NO:<br><a style="color:white;text-decoration: none;" href="tel:9924095244"> +91 9924095244</a></p>
+        <p style="color:white;">EMAIL-ID:<br><a href="mailto:info@deepuimpex.com?subject=Enquiry" style="color:white;text-decoration:none;">info@deepuimpex.com</a></p>
       </div>
     </div></div><br>
     <div class="container">
@@ -662,7 +658,7 @@
       <ul style="list-style-type:none;display:inline;float:left;">
         <li style="display:inline;margin-left:0px;"><a href="index.html" style="color:white;text-decoration:none;">Home</a></li>&nbsp;&nbsp;&nbsp;
         <li style="display:inline;"><a href="About.html" style="color:white;text-decoration:none;">About</a></li>&nbsp;&nbsp;&nbsp;
-        <li style="display:inline;"><a href="#" style="color:white;text-decoration:none;">Products</a></li>&nbsp;&nbsp;&nbsp;
+        <li style="display:inline;"><a href="products.html" style="color:white;text-decoration:none;">Products</a></li>&nbsp;&nbsp;&nbsp;
         <li style="display:inline;"><a href="contact.html" style="color:white;text-decoration:none;">Contact</a></li>&nbsp;&nbsp;&nbsp;
       </ul>
     </div>
@@ -670,6 +666,7 @@
       <p style="float:right;color:white;">&copy;&nbsp;Deepu Impex</p>
     </div>
   </div>
+    <center><h4 style="color:white;">Made with <span style="color:red;">&hearts;</span> at <a style="color:white;text-decoration:none;" href="https://clavierlabs.com">Clavier Labs</a></h4></center>
 </div>
 </div>
   <!--<div id="sec4" style="margin-top:0px;">

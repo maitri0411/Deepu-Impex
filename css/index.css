@@ -1,13 +1,26 @@
-.nav-link:hover{
-  border-bottom:4px solid green;
-  background-color: none;
-}
+
 
 .center{
-  height:600px;
   position:absolute;
-  top:30%;
+  top:20%;
   left:20%;
+}
+
+.center h1{
+  font-size:44px;
+}
+
+@media(max-width:767px){
+  .center{
+    height:100%;
+    position:absolute;
+    top:30%;
+    left:20%;
+  }
+  .slide-right h1{
+      width:300px;
+    font-size:22px;
+  }
 }
 
 .center1{
@@ -92,10 +105,6 @@ body{position:relative}
 .sideMenu{left:-100%;top:52px;transition:all ease 0.5s;overflow:hidden;width:100%;z-index:999;max-width:80%;margin-bottom:0;padding:1rem}
 .sideMenu.open{left:0;display:block;overflow-y:auto}
 .sideMenu ul{margin:0;padding:0 15px}
-.nav-link:hover{
-  color:red;
-}
-
 @media(min-width:767px){
   #import1{
     display:none;
@@ -241,7 +250,7 @@ body{position:relative}
   left: 0;
 }
 .btn--clear:hover {
-  background: #FF5722;
+  background: #c71f16;
 }
 
 @media(max-width:767px){
