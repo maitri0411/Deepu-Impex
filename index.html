@@ -88,22 +88,50 @@
 
 .modal-body {padding: 2px 16px;}
 
+@media(max-width:767px){
+  #header{
+    display:none;
+  }
+}
+@media(min-width:767px){
+  #header1{
+    display:none;
+  }
+}
+@media(max-width:767px){
+  #sec1{
+    display:none;
+  }
+}
+@media(min-width:767px){
+  #sec1_1{
+    display:none;
+  }
+}
+
 </style>
 </head>
 <body>
   <div id="header" style="background:#eba607;max-width:100%;height:auto;">
     <div class="container">
       <div class="row">
-      <div class="col-sm-6 col-md-6" style="padding-top:12px;">
+      <div class="col-sm-6 col-md-6 col-xs-12" style="padding-top:12px;">
         <p style="text-decoration:none;color:white;font-family:'Basic';font-size:18px;">Email: <a href="mailto:info@deepuimpex.com?subject=Enquiry" style="color:white;text-decoration:none;">info@deepuimpex.com</a></p>
       </div>
-      <div class="col-sm-6 col-md-6" style="padding-top:12px;">
+      <div class="col-sm-6 col-md-6 col-xs-12" style="padding-top:12px;">
         <p style="color:white;float:right;margin-right:10px;font-size:18px;font-family:'Basic';">Contact No:<a href="tel:9924095244" style="color:white;text-decoration:none;"> +91 9924095244</a></p>
       </div>
     </div>
 
   </div>
   </div>
+
+  <center><div id="header1" style="background:#eba607;max-width:100%;height:auto;">
+    <div class="container">
+      <p style="text-decoration:none;color:white;font-family:'Basic';font-size:18px;">Email: <a href="mailto:info@deepuimpex.com?subject=Enquiry" style="color:white;text-decoration:none;">info@deepuimpex.com</a></p>
+      <p style="color:white;font-size:18px;font-family:'Basic';">Contact No:<a href="tel:9924095244" style="color:white;text-decoration:none;"> +91 9924095244</a></p>
+</div>
+</div></center>
   <center><div id="myModal" class="modal" style="max-width:100%;height:auto;">
 
      <!-- Modal content -->
@@ -129,6 +157,31 @@
      </div>
 
    </div></center>
+   <center><div id="myModal1" class="modal" style="max-width:100%;height:auto;">
+
+      <!-- Modal content -->
+      <div class="modal-content" style="max-width:100%;height:auto;">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <center><h3>Get A Quote</h3></center>
+          <center><form action="mailto:info@deepuimex.com?subject=Request-For-Quotation" method="post" enctype="text/plain"><br>
+            <input type="text" name="First Name" id="Fname" placeholder="First Name *" style="padding:10px;border:1px solid black;width:40%;">
+            <input type="text" name="Last Name" id="Lname" placeholder="Last Name *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+            <input type="number" name="Phone no" id="Phone" placeholder="Phone No *" style="padding:10px;border:1px solid black;width:40%;">
+            <input type="email" name="Email" id="Email" placeholder="Email Id *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+            <input type="text" name="Company Name" id="Cname" placeholder="Company Name *" style="padding:10px;border:1px solid black;width:40%;">
+            <input type="text" name="Product Name" id="Prod" placeholder="Product Name *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+            <input type="number" name="Quantity" id="Quant" placeholder="Quantity *" style="padding:10px;border:1px solid black;width:40%;">
+            <input type="text" id="Pay" name="Payment Terms" placeholder="Payment Terms *" style="margin-left:20px;padding:10px;border:1px solid black;width:40%;"><br><br>
+            <textarea type="text" name="Other Requirements" id="specs" placeholder="Other Requirements" style="width:480px;padding:10px;border:1px solid black;width:84%;"></textarea><br><br>
+            <input type="submit" id="btn_submit" value="Submit" style="width:200px;padding:10px;border:2px solid #0089d5;color:#0089d5;background:white;"><br><br>
+          </form></center>
+        </div>
+      </div>
+
+    </div></center>
   <div id="sec1" style="max-width:100%;height:auto;">
     <div class="container"><br>
       <div class="row">
@@ -142,10 +195,19 @@
       </div>
     </div>
   </div>
+</div>
 
-    <nav class="navbar navbar-expand-md navbar-dark sidebarNavigation fixed" data-sidebarClass="navbar-default bg-light" style="height:50px;background:#eba607;z-index:0;">
+  <center><div id="sec1_1" style="max-width:100%;height:auto;">
+    <div class="container"><br>
+        <a href="index.html"><img src="images/Logo.png" width="150px" height="100px"></a><br><br>
+        <a href="contact.html" style="text-decoration:none;color:white;background:#c71f16;padding:10px;border-radius:20px;font-family:'Basic';">Contact Us</a>
+        <a href="#" id="myBtn1" style="text-decoration:none;color:white;background:#c71f16;padding:10px;border-radius:20px;font-family:'Basic';">Request Quotation</a>
+    </div>
+  </div></center><br>
+
+    <nav class="navbar navbar-expand-md navbar-light sidebarNavigation fixed" data-sidebarClass="navbar-default bg-light" style="height:50px;background:#eba607;z-index:0;">
         <div class="container-fluid">
-        <button style="background: black;" class="navbar-toggler leftNavbarToggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        <button style="background: white;" class="navbar-toggler leftNavbarToggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -153,20 +215,20 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
                 <li class="nav-item active" style="margin-right:170px;">
-                    <a class="nav-link" href="index.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Lobster';">Home
+                    <a class="nav-link" href="index.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Basic';">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item" style="margin-right:170px;">
-                    <a class="nav-link" href="About.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Lobster';">About</a>
+                    <a class="nav-link" href="About.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Basic';">About</a>
                 </li>
 
                 <li class="nav-item" style="margin-right:170px;">
-                    <a class="nav-link" href="products.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Lobster';">Products</a>
+                    <a class="nav-link" href="products.html" style="color:black;width:100px;font-size:24px;text-align:center;font-family:'Basic';">Products</a>
                 </li>
 
                 <li class="nav-item" style="margin-right:170px;">
-                    <a class="nav-link" href="contact.html" style="color:black;width:100px;text-align:center;font-size:24px;font-family:'Lobster';">Contact</a>
+                    <a class="nav-link" href="contact.html" style="color:black;width:100px;text-align:center;font-size:24px;font-family:'Basic';">Contact</a>
                 </li>
 
 
@@ -366,8 +428,8 @@
     </div>
 
 </section>-->
-<div class="flex-grid featured-content" style="max-width:100%;height:auto;">
-  <center><h2  style="color:white;background:#c71f16;width:400px;padding:10px;font-family: 'Lobster', cursive;">Products We Import & Export</h2><hr style="border:1px dashed #c71f16;width:800px;margin-top:-40px;"></center>
+<div class="flex-grid featured-content" style="width:100%;max-width:100%;height:auto;">
+  <center><h2  style="color:white;background:#c71f16;width:350px;padding:10px;font-family: 'Lobster', cursive;">Products We Import & Export</h2><hr style="border:1px dashed #c71f16;width:80%;margin-top:-40px;"></center>
   <div class="row">
   <div class="col-sm-6" style="padding-top:30px;">
       <div class="grid-item wow slideInLeft">
@@ -697,6 +759,33 @@ var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal1");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[1];
 
 // When the user clicks the button, open the modal
 btn.onclick = function() {

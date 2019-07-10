@@ -22,6 +22,11 @@
     font-size:22px;
   }
 }
+@media(max-width:767px){
+  .center h1{
+    display: none;
+  }
+}
 
 .center1{
   height:200px;
