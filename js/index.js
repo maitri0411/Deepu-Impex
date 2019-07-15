@@ -210,3 +210,6 @@ function animateMe(elem) {
     $(elem).removeClass('notAnimated').addClass('animated');
   }
 }
+
+$(document).ready(function(){ $(window).scroll(function () { if ($(this).scrollTop() > 50) { $('#back-to-top').fadeIn(); }
+ else { $('#back-to-top').fadeOut(); } }); $('#back-to-top').tooltip('show'); });
